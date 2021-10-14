@@ -59,6 +59,7 @@
             android:paddingLeft="10dp"
             android:background="@drawable/edt_background"
             android:hint="Email"
+            android:textColorHint="@color/gray"
             android:fontFamily="@font/nanumb"
             android:textColor="@color/black"/>
 
@@ -73,6 +74,7 @@
             android:paddingLeft="10dp"
             android:background="@drawable/edt_background"
             android:hint="Password"
+            android:textColorHint="@color/gray"
             android:fontFamily="@font/nanumb"
             android:textColor="@color/black"/>
 
