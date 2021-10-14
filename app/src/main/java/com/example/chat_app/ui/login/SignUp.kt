@@ -1,4 +1,4 @@
-package com.example.chat_app.ui
+package com.example.chat_app.ui.login
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
@@ -7,7 +7,11 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
 import com.example.chat_app.R
+import com.example.chat_app.ui.MainActivity
+import com.example.chat_app.ui.login.user.User
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.database.DatabaseReference
+import com.google.firebase.database.FirebaseDatabase
 
 class SignUp : AppCompatActivity() {
 
@@ -17,10 +21,13 @@ class SignUp : AppCompatActivity() {
     private lateinit var btnLogin : Button
     private lateinit var btnSignUp : Button
     private lateinit var mAuth : FirebaseAuth
+    private lateinit var mDbRef : DatabaseReference
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_sign_up)
 
+        supportActionBar?.hide()
         mAuth = FirebaseAuth.getInstance()
 
         edtEmail = findViewById(R.id.et_email)
@@ -45,6 +52,7 @@ class SignUp : AppCompatActivity() {
                     //메인으로 이동
                     addUserToDatabase(name, email, mAuth.currentUser?.uid!!)
                     val intent = Intent(this@SignUp, MainActivity::class.java)
+                    finish()
                     startActivity(intent)
                 } else {
                     Toast.makeText(this@SignUp, "이메일 또는 비밀번호가 틀렸습니다", Toast.LENGTH_SHORT).show()
@@ -52,6 +60,7 @@ class SignUp : AppCompatActivity() {
             }
     }
     private fun addUserToDatabase(name: String, email: String, uid: String){
-
+        mDbRef = FirebaseDatabase.getInstance().getReference()
+        mDbRef.child("user").child(uid).setValue(User(name, email, uid))
     }
 }

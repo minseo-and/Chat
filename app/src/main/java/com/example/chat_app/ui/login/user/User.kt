@@ -1,4 +1,4 @@
-package com.example.chat_app.ui
+package com.example.chat_app.ui.login.user
 
 class User {
     var name : String? = null

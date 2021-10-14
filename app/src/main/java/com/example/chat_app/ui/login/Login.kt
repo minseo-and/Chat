@@ -1,4 +1,4 @@
-package com.example.chat_app.ui
+package com.example.chat_app.ui.login
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
@@ -7,6 +7,7 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
 import com.example.chat_app.R
+import com.example.chat_app.ui.MainActivity
 import com.google.firebase.auth.FirebaseAuth
 
 class Login : AppCompatActivity() {
@@ -20,6 +21,8 @@ class Login : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
+
+        supportActionBar?.hide()
 
         mAuth = FirebaseAuth.getInstance()
 
@@ -47,6 +50,7 @@ class Login : AppCompatActivity() {
                 if (task.isSuccessful) {
                     //유저 정보 확인 시 로그인
                     val intent = Intent(this@Login, MainActivity::class.java)
+                    finish()
                     startActivity(intent)
                 } else {
                     Toast.makeText(this, "유저 정보가 존재하지 않습니다", Toast.LENGTH_SHORT).show()

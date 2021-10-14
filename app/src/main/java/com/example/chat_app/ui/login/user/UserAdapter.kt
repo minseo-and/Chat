@@ -1,4 +1,4 @@
-package com.example.chat_app.ui
+package com.example.chat_app.ui.login.user
 
 import android.content.Context
 import android.view.LayoutInflater
