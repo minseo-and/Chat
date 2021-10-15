@@ -5,10 +5,16 @@
       <map>
         <entry key="app/src/main/res/drawable/btn_background.xml" value="0.17407407407407408" />
         <entry key="app/src/main/res/drawable/edt_background.xml" value="0.17407407407407408" />
+        <entry key="app/src/main/res/drawable/message_box_background.xml" value="0.17135416666666667" />
+        <entry key="app/src/main/res/drawable/txt_background.xml" value="0.17135416666666667" />
+        <entry key="app/src/main/res/drawable/txt_background_receive.xml" value="0.17135416666666667" />
         <entry key="app/src/main/res/drawable/user_layout.xml" value="0.17135416666666667" />
+        <entry key="app/src/main/res/layout/activity_chat.xml" value="0.1503623188405797" />
         <entry key="app/src/main/res/layout/activity_login.xml" value="0.25" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.1503623188405797" />
         <entry key="app/src/main/res/layout/activity_sign_up.xml" value="0.335" />
+        <entry key="app/src/main/res/layout/receive.xml" value="0.165" />
+        <entry key="app/src/main/res/layout/sent.xml" value="0.25" />
         <entry key="app/src/main/res/layout/user_layout.xml" value="0.165" />
         <entry key="app/src/main/res/menu/menu.xml" value="0.15520833333333334" />
       </map>

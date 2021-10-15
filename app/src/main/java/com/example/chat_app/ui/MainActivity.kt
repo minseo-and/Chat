@@ -36,7 +36,7 @@ class MainActivity : AppCompatActivity() {
         userRecyclerView.layoutManager = LinearLayoutManager(this)
         userRecyclerView.adapter = adapter
 
-        mDbRef.child("user").addValueEventListener(object: ValueEventListener{
+        mDbRef.child("User").addValueEventListener(object: ValueEventListener{
             override fun onDataChange(snapshot: DataSnapshot) {
 
                 userList.clear()
